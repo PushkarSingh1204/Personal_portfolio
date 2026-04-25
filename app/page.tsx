@@ -185,7 +185,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 1.1 }}
               style={{ display: 'flex', gap: '1rem', position: 'relative', zIndex: 2, flexWrap: 'wrap' }}
             >
-              <a href="mailto:pushkarsingh.20061204@gmail.com" className="cta-button">Email Me</a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pushkarsingh.20061203@gmail.com" target="_blank" rel="noopener noreferrer" className="cta-button">Email Me</a>
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="cta-button" style={{ background: 'transparent', color: '#fff', borderColor: 'var(--border-color)' }}>GitHub</a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="cta-button" style={{ background: 'transparent', color: '#fff', borderColor: 'var(--border-color)' }}>LinkedIn</a>
             </motion.div>
@@ -234,7 +234,7 @@ export default function Home() {
             </div>
 
             <FadeInView>
-              <h3 className="section-title" style={{ padding: '4rem 2rem 2rem 2rem', marginBottom: 0 }}>CODING TOOLS</h3>
+              <h3 className="section-title" style={{ padding: '4rem 2rem 2rem 2rem', marginBottom: 0 }}>CODING TOOLS / NO CODE PLATFORMS</h3>
             </FadeInView>
             
             <div className="marquee-wrapper" style={{ borderBottom: 'none' }}>
@@ -248,7 +248,12 @@ export default function Home() {
                   { name: "Git", icon: "devicon-git-plain" },
                   { name: "GitHub", icon: "devicon-github-original" },
                   { name: "Arduino", icon: "devicon-arduino-plain" },
-                  { name: "Flask", icon: "devicon-flask-original" }
+                  { name: "Flask", icon: "devicon-flask-original" },
+                  { name: "Blender", icon: "devicon-blender-original" },
+                  { name: "Cursor", icon: "devicon-vscode-plain" },
+                  { name: "Warp", icon: "devicon-bash-plain" },
+                  { name: "Lovable", icon: "devicon-figma-plain" },
+                  { name: "Antigravity", icon: "devicon-google-plain" }
                 ].map((tool, idx) => (
                   <div key={`tool-1-${idx}`} className="tool-item">
                     <i className={`${tool.icon} colored tool-icon`}></i>
@@ -265,7 +270,12 @@ export default function Home() {
                   { name: "Git", icon: "devicon-git-plain" },
                   { name: "GitHub", icon: "devicon-github-original" },
                   { name: "Arduino", icon: "devicon-arduino-plain" },
-                  { name: "Flask", icon: "devicon-flask-original" }
+                  { name: "Flask", icon: "devicon-flask-original" },
+                  { name: "Blender", icon: "devicon-blender-original" },
+                  { name: "Cursor", icon: "devicon-vscode-plain" },
+                  { name: "Warp", icon: "devicon-bash-plain" },
+                  { name: "Lovable", icon: "devicon-figma-plain" },
+                  { name: "Antigravity", icon: "devicon-google-plain" }
                 ].map((tool, idx) => (
                   <div key={`tool-2-${idx}`} className="tool-item">
                     <i className={`${tool.icon} colored tool-icon`}></i>
@@ -418,23 +428,28 @@ export default function Home() {
             </FadeInView>
             
             <FadeInView delay={0.2}>
-              <form className="contact-form">
+              <form action="https://formsubmit.co/pushkarsingh.20061203@gmail.com" method="POST" className="contact-form">
+                {/* Disable Captcha for smoother experience, or remove this line if you want captcha */}
+                <input type="hidden" name="_captcha" value="false" />
+                {/* Custom subject for the email */}
+                <input type="hidden" name="_subject" value="New transmission from Portfolio!" />
+                
                 <div className="form-group">
                   <label htmlFor="name">IDENTIFIER (NAME)</label>
-                  <input type="text" id="name" required />
+                  <input type="text" id="name" name="name" required />
                 </div>
                 <div className="form-group">
                   <label htmlFor="email">CONTACT (EMAIL)</label>
-                  <input type="email" id="email" required />
+                  <input type="email" id="email" name="email" required />
                 </div>
                 <div className="form-group">
                   <label htmlFor="message">PAYLOAD (MESSAGE)</label>
-                  <textarea id="message" rows={5} required></textarea>
+                  <textarea id="message" name="message" rows={5} required></textarea>
                 </div>
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  type="button" 
+                  type="submit" 
                   className="cta-button" 
                   style={{ maxWidth: 'max-content' }}
                 >
